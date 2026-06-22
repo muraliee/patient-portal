@@ -41,7 +41,7 @@ pipeline {
                 script {
                     echo '========== Docker Build Started =========='
                     try {
-                        dir('patient-portal') {
+                        
                             sh """
                                 echo 'Building Docker image...'
                                 docker build -t ${DOCKER_REPO}:${BUILD_TAG} .
@@ -49,7 +49,7 @@ pipeline {
                                 echo '✓ Docker Image Built Successfully'
                                 docker images | grep ${DOCKER_REPO}
                             """
-                        }
+                        
                     } catch (Exception e) {
                         echo "✗ Docker Build Failed: ${e.message}"
                         throw e
