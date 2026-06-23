@@ -33,3 +33,9 @@ variable "public_subnets" {
   type        = list(string)
   default     = ["10.2.1.0/24", "10.2.2.0/24"]
 }
+
+variable "availability_zones" {
+  description = "List of availability zones for subnets"
+  type        = list(string)
+  default     = ["eu-north-1a", "eu-north-1b"]
+}
